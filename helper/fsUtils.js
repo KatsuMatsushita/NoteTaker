@@ -8,9 +8,16 @@ one advantage is not needing to write out an async wait function*/
 const readFromFile = util.promisify(fs.readFile);
 
 const appendToFile = (content, file) => {
-    const fileInMem = readFromFile(file);
-    fileInMem.push(content);
-    fs.writeFile(file, JSON.stringify(fileInMem));
+    fs.readFile(file, "utf8", (err, data) => {
+        if(err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            parsedData.push(content);
+            fs.writeFile(file, JSON.stringify(parsedData, null, 2), (err) =>
+            err ? console.error(err) : console.info(`\nData has been written to ${file}`));
+        };
+    });
 };
 
 module.exports = { readFromFile, appendToFile };
