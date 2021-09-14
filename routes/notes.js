@@ -4,7 +4,7 @@ const fs = require("fs");
 const {v4 : uuidv4 } = require("uuid");
 
 // bring in the helper fsUtils file for reading and appending to the db.json file
-const { readFromFile, appendToFile } = require("../helper/fsUtils");
+const { readFromFile, appendToFile, deleteFromFile } = require("../helper/fsUtils");
 
 // location of the db.json file set as a const so that it can be reused
 const jsonFile = "./db/db.json";
@@ -37,6 +37,13 @@ notes.post("/", (req, res) => {
     };
     appendToFile(newNote, jsonFile);
     res.send(`Information submitted with User ID: ${id}`);
+})
+
+notes.delete("/:id", (req, res) => {
+    const id = req.params.id;
+
+    deleteFromFile(id, jsonFile);
+    res.send(`Selected note with User ID ${id} has been deleted`);
 })
 
 module.exports = notes;
