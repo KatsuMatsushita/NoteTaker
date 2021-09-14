@@ -4,7 +4,10 @@ const path = require('path');
 // an index.js file with routes using modular routing
 const api = require('./routes/index.js');
 
-const PORT = 3001;
+const PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+    PORT = 3001;
+}
 
 const app = express();
 
