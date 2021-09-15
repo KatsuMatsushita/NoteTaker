@@ -25,13 +25,17 @@ The HTML webpage uses Bootstrap, FontAwesome, and an application-specific CSS fi
 1. Using Gitbash, navigate to the folder where the project has been cloned
 2. run the following command "npm start"
 3. Open a web browser to http://localhost:3001/
-4. Click on the "Get Started" button
-5. this will take you to notes.html and the main app
-6. click on "Note Title" to enter the title of the note
-7. click on "Note Text" to enter the text of the note
-8. Click on the "Save" icon to save the note
-9. Saved notes will appear on the left-hand bar
-10. Click on the "Delete" icon to delete the note
+4. ![notetaker-landing](https://user-images.githubusercontent.com/85419207/133359577-9e7402fa-9cd0-447a-84a3-603e76b0d782.png)
+
+5. Click on the "Get Started" button
+6. this will take you to notes.html and the main app
+7. ![notetaker-notes](https://user-images.githubusercontent.com/85419207/133359602-33d096af-558d-49bd-97ce-a8d69127b2ab.png)
+
+8. click on "Note Title" to enter the title of the note
+9. click on "Note Text" to enter the text of the note
+10. Click on the "Save" icon to save the note
+11. Saved notes will appear on the left-hand bar
+12. Click on the "Delete" icon to delete the note
 
 ## Contribution Guidelines <a name="contribution"></a>
 1. Clone the Main branch of the repository from GitHub
